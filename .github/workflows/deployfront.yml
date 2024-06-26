@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd FE/airbnb_fe
+        cd be-airdnb/FE/airdnb_fe
         if [ -f package-lock.json ]; then
           npm ci
         else
