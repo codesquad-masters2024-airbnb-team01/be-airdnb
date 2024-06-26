@@ -45,8 +45,8 @@ dependencies {
 
 	implementation 'com.h2database:h2'
 
-	//security
-//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	// OpenCSV for reading CSV files
+	implementation 'com.opencsv:opencsv:5.5.2'
 
 	// Spring boot 3.0 querydsl 설정
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
