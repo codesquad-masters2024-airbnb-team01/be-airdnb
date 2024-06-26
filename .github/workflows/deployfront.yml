@@ -18,13 +18,9 @@ jobs:
       with:
         node-version: '20.14.0'  # 또는 프로젝트에서 사용하는 Node.js 버전
 
-    - name: Navigate to frontend directory
-      working-directory: FE/airbnb_fe
-      run: echo "Navigating to frontend directory"
-
     - name: Install dependencies
-      working-directory: FE/airbnb_fe
       run: |
+        cd FE/airbnb_fe
         if [ -f package-lock.json ]; then
           npm ci
         else
@@ -32,8 +28,9 @@ jobs:
         fi
 
     - name: Build
-      working-directory: FE/airbnb_fe
-      run: npm run build
+      run: |
+        cd FE/airbnb_fe
+        npm run build
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -43,4 +40,5 @@ jobs:
         aws-region: ap-northeast-2  # 서울 리전 (필요에 따라 변경)
 
     - name: Deploy to S3
-      run: aws s3 sync FE/airbnb_fe/dist/ s3://${{ secrets.S3_BUCKET }} --delete
+      run: |
+        aws s3 sync FE/airbnb_fe/dist/ s3://${{ secrets.S3_BUCKET }} --delete
