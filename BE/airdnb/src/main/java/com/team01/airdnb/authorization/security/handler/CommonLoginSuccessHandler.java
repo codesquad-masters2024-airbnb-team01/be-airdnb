@@ -29,6 +29,7 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         Cookie accessTokenCookie = new Cookie("jwt", jwt);
         accessTokenCookie.setSecure(true);
+
         accessTokenCookie.setPath("/");
         accessTokenCookie.setMaxAge((int) JwtConstants.ACCESS_EXP_TIME);
 
@@ -38,6 +39,6 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
         log.debug("Response map: {}", responseMap);
 
         response.setContentType("application/json; charset=UTF-8");
-        response.sendRedirect("https://airdnb.3utilities.com/callback");
+        response.sendRedirect("https://daydnb.store/callback");
     }
 }
