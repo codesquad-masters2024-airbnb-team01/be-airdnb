@@ -37,6 +37,6 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
         log.debug("Response map: {}", responseMap);
 
         response.setContentType("application/json; charset=UTF-8");
-        response.sendRedirect("https://daydnb.store/callback");
+        response.sendRedirect("https://airdnb.3utilities.com/callback");
     }
 }
