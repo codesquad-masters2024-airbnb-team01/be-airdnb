@@ -24,7 +24,7 @@ public class UserService {
     this.commentRepository = commentRepository;
   }
 
-  public User FindUserById(Long userId){
+  public User findUserById(Long userId){
     return userRepository.findById(userId)
         .orElseThrow(() -> new NoSuchElementException("해당하는 유저가 존재하지 않습니다"));
   }
@@ -61,7 +61,7 @@ public class UserService {
   }
 
   public void delete(Long userId){
-    User user = FindUserById(userId);
+    User user = findUserById(userId);
     userRepository.delete(user);
   }
 }
