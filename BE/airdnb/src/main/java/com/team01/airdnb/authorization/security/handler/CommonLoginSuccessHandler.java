@@ -37,6 +37,6 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
         log.debug("Response map: {}", responseMap);
 
         response.setContentType("application/json; charset=UTF-8");
-        response.sendRedirect("http://localhost:8077/callback");
+        response.sendRedirect("https://localhost:8077/callback");
     }
 }
