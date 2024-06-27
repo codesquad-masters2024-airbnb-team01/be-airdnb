@@ -28,6 +28,7 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
         String jwt = JwtUtils.generateToken(responseMap, JwtConstants.ACCESS_EXP_TIME);
 
         Cookie accessTokenCookie = new Cookie("jwt", jwt);
+        accessTokenCookie.setSecure(true);
         accessTokenCookie.setPath("/");
         accessTokenCookie.setMaxAge((int) JwtConstants.ACCESS_EXP_TIME);
 
