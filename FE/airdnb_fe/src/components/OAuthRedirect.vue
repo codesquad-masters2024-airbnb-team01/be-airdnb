@@ -1,9 +1,7 @@
 <template>
 <div>
     <button @click="getAuthorization">쿠키 가져오기</button>
-    <div>
-        jwt : {{ my_cookie_value }}
-    </div>
+    <div ></div>
 </div>
 </template>
     
@@ -12,7 +10,6 @@ import { useCookies } from "vue3-cookies";
 export default {
     data(){
         return {
-
         }
     },
     setup() {
@@ -20,6 +17,7 @@ export default {
         return { cookies };
     },
     created(){
+        alert(this.cookies.get("jwt"));
         this.$store.commit('setToken',this.cookies.get("jwt"));
         this.cookies.remove("jwt");
         this.$router.push('/');
