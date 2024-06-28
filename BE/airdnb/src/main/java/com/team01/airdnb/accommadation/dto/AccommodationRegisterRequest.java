@@ -21,12 +21,12 @@ public record AccommodationRegisterRequest(
     List<String> images,
     AmenityStatus tv,
     AmenityStatus kitchen,
-    AmenityStatus washing_machine,
-    AmenityStatus free_parking,
-    AmenityStatus paid_parking,
-    AmenityStatus air_conditioning,
-    AmenityStatus dedicated_workspace,
-    AmenityStatus wireless_internet,
+    AmenityStatus washingMachine,
+    AmenityStatus freeParking,
+    AmenityStatus paidParking,
+    AmenityStatus airConditioning,
+    AmenityStatus dedicatedWorkspace,
+    AmenityStatus wirelessInternet,
     Integer beds,
     Integer bathrooms,
     Long userId
@@ -41,12 +41,12 @@ public record AccommodationRegisterRequest(
     if (maxPets == null) maxPets = 0;
     if (tv == null) tv = AmenityStatus.NOT_AVAILABLE;
     if (kitchen == null) kitchen = AmenityStatus.NOT_AVAILABLE;
-    if (washing_machine == null) washing_machine = AmenityStatus.NOT_AVAILABLE;
-    if (free_parking == null) free_parking = AmenityStatus.NOT_AVAILABLE;
-    if (paid_parking == null) paid_parking = AmenityStatus.NOT_AVAILABLE;
-    if (air_conditioning == null) air_conditioning = AmenityStatus.NOT_AVAILABLE;
-    if (dedicated_workspace == null) dedicated_workspace = AmenityStatus.NOT_AVAILABLE;
-    if (wireless_internet == null) wireless_internet = AmenityStatus.NOT_AVAILABLE;
+    if (washingMachine == null) washingMachine = AmenityStatus.NOT_AVAILABLE;
+    if (freeParking == null) freeParking = AmenityStatus.NOT_AVAILABLE;
+    if (paidParking == null) paidParking = AmenityStatus.NOT_AVAILABLE;
+    if (airConditioning == null) airConditioning = AmenityStatus.NOT_AVAILABLE;
+    if (dedicatedWorkspace == null) dedicatedWorkspace = AmenityStatus.NOT_AVAILABLE;
+    if (wirelessInternet == null) wirelessInternet = AmenityStatus.NOT_AVAILABLE;
     if (beds == null) beds = 1;
     if (bathrooms == null) bathrooms = 0;
   }
@@ -82,12 +82,12 @@ public record AccommodationRegisterRequest(
     return Amenity.builder()
         .tv(this.tv)
         .kitchen(this.kitchen)
-        .washingMachine(this.washing_machine)
-        .freeParking(this.free_parking)
-        .paidParking(this.paid_parking)
-        .airConditioner(this.air_conditioning)
-        .dedicatedWorkspace(this.dedicated_workspace)
-        .wirelessInternet(this.wireless_internet)
+        .washingMachine(this.washingMachine)
+        .freeParking(this.freeParking)
+        .paidParking(this.paidParking)
+        .airConditioner(this.airConditioning)
+        .dedicatedWorkspace(this.dedicatedWorkspace)
+        .wirelessInternet(this.wirelessInternet)
         .beds(this.beds)
         .bathrooms(this.bathrooms)
         .build();

@@ -40,7 +40,7 @@ public class ReservationService {
   }
 
   public void createReservation(ReservationRequest reservationRequest) {
-    User user = userService.FindUserById(reservationRequest.userId());
+    User user = userService.findUserById(reservationRequest.userId());
     Accommodation accommodation = accommodationService.findById(
         reservationRequest.accommodationId());
 

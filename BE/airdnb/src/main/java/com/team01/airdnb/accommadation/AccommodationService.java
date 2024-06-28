@@ -48,7 +48,7 @@ public class AccommodationService {
    * 숙소를 등록합니다
    */
   public void register(AccommodationRegisterRequest accommodationRegisterRequest) {
-    User user = userService.FindUserById(accommodationRegisterRequest.userId());
+    User user = userService.findUserById(accommodationRegisterRequest.userId());
     Accommodation accommodation = accommodationRegisterRequest.toAccommodationEntity(user);
     if(user.getRole() == Role.USER) {
       user.setRole(Role.HOST);  //숙소를 등록할때 유저의 역할을 유저에서 호스트로 변경 합니다.

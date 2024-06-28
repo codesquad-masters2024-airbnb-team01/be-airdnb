@@ -21,15 +21,15 @@ public record AccommodationUpdateRequest(
     List<String> images,
     AmenityStatus tv,
     AmenityStatus kitchen,
-    AmenityStatus washing_machine,
-    AmenityStatus free_parking,
-    AmenityStatus paid_parking,
-    AmenityStatus air_conditioning,
-    AmenityStatus dedicated_workspace,
-    AmenityStatus wireless_internet,
+    AmenityStatus washingMachine,
+    AmenityStatus freeParking,
+    AmenityStatus paidParking,
+    AmenityStatus airConditioning,
+    AmenityStatus dedicatedWorkspace,
+    AmenityStatus wirelessInternet,
     Integer beds,
     Integer bathrooms,
-    String user_id
+    String userId
 ) {
   public Accommodation toAccommodationEntity() {
     return Accommodation.builder()
@@ -58,12 +58,12 @@ public record AccommodationUpdateRequest(
     return Amenity.builder()
         .tv(tv)
         .kitchen(kitchen)
-        .washingMachine(washing_machine)
-        .freeParking(free_parking)
-        .paidParking(paid_parking)
-        .airConditioner(air_conditioning)
-        .dedicatedWorkspace(dedicated_workspace)
-        .wirelessInternet(wireless_internet)
+        .washingMachine(washingMachine)
+        .freeParking(freeParking)
+        .paidParking(paidParking)
+        .airConditioner(airConditioning)
+        .dedicatedWorkspace(dedicatedWorkspace)
+        .wirelessInternet(wirelessInternet)
         .beds(beds)
         .bathrooms(bathrooms)
         .build();
