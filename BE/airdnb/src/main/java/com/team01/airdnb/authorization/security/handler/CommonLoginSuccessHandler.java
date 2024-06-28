@@ -34,6 +34,14 @@ public class CommonLoginSuccessHandler implements AuthenticationSuccessHandler {
         accessTokenCookie.setMaxAge((int) JwtConstants.ACCESS_EXP_TIME);
 
         response.addCookie(accessTokenCookie);
+        response.addHeader("Authorization", "Bearer " + jwt);
+
+        response.setHeader("Access-Control-Allow-Origin", "https://daydnb.store");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Requested-With");
+
 
         log.info("Login successful for user: {}", principal.getUsername());
         log.debug("Response map: {}", responseMap);
