@@ -1,6 +1,7 @@
 <template>
   <RouterView/>
   <LoginModal/>
+  <div>왜 안되는 건데!!</div>
 </template>
 
 <script>
