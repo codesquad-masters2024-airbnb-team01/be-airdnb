@@ -73,24 +73,7 @@ public class AccommodationFilterRepositoryImpl implements AccommodationFilterRep
         .limit(pageable.getPageSize())
         .fetch();
 
-    Long totalCount = jpaQueryFactory
-        .select(Wildcard.count)
-        .from(accommodation)
-        .leftJoin(reservation).on(accommodation.id.eq(reservation.accommodation.id))
-        .where(
-            notReservation()
-                .or(startDateGt(checkin, checkout))
-                .or(endDateLt(checkin, checkout)),
-            betweenPrice(minPrice, maxPrice),
-            checkAdult(adultCount),
-            checkChildren(childrenCount),
-            checkInfants(infantsCount),
-            address(location),
-            checkRadius(latitude, longitude)
-        )
-        .fetchOne();
-
-    return new PageImpl<>(result, pageable, totalCount != null ? totalCount : 0L);
+    return new PageImpl<>(result, pageable, result.size());
   }
 
   private BooleanExpression address(String location) {
