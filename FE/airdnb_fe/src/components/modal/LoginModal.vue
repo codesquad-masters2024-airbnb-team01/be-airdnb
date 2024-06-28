@@ -33,7 +33,7 @@ export default{
         },
         googleLogin(){
             // window.location.href = "http://localhost:8080/oauth2/authorization/google";
-            window.location.href = "https://airdnb.3utilities.com/oauth2/authorization/google";
+            window.location.href = "https://api.daydnb.store/oauth2/authorization/google";
         }
     },
     mounted(){
