@@ -19,7 +19,7 @@ import java.io.IOException;
 @Slf4j
 public class JwtVerifyFilter extends OncePerRequestFilter {
 
-    private static final String[] whitelist = {"/signUp", "/login","/oauth2/login" , "/refresh", "/", "/index.html"};
+    private static final String[] whitelist = {"/signUp", "/login","/oauth2/login" , "/refresh", "/", "/index.html","/api/login/oauth2/**"};
 
     private static void checkAuthorizationHeader(String header) {
         if(header == null) {
